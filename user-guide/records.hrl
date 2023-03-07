@@ -1,0 +1,1 @@
+-record(my_todo, {status=todo, who=fish, event=none}).
