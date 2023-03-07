@@ -47,7 +47,8 @@ split(Fun, [H | List], {List1, List2}) ->
     end.
 
 quickSort([Pivot | T]) ->
-    lists:append([quickSort([X || X <- T, x < Pivot]), [Pivot], quickSort([X || X <- T, x >= Pivot])]).
+    [quickSort([X || X <- T, x < Pivot]) ++ [Pivot] ++ quickSort([X || X <- T, x >= Pivot])];
+quickSort([]) -> [].
 
 split_test() ->
     List = [1, a, 3, b, 4],
