@@ -39,12 +39,15 @@ sum(N) when is_integer(N), N > 1 -> sum(N) + sum(N - 1);
 sum(_) -> err.
 
 split(Fun, List) -> split(Fun, List, {[], []}).
-split(_, [], Tuple) -> Tuple;
-split(Fun, [H | List], {List1, List2}) ->
+split(_, [], Tuple) -> 
+    { A, B } = Tuple,
+    { lists:reverse(A), lists:reverse(B) };
+split(Fun, [H | List], {List1, List2}) when is_function(Fun, 1) ->
     case Fun(H) of
         true ->  split(Fun, List, {[H | List1], List2});
         false -> split(Fun, List, {List1, [H | List2]})
-    end.
+    end;
+split(_, _, _) -> err.
 
 quickSort([Pivot | T]) ->
     [quickSort([X || X <- T, x < Pivot]) ++ [Pivot] ++ quickSort([X || X <- T, x >= Pivot])];

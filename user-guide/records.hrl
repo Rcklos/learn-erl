@@ -1,1 +1,2 @@
 -record(my_todo, {status=todo, who=fish, event=none}).
+-record(role, {id = 0, name = "Joey", sex = man, lev = 0, age = 0, score = 0}).
