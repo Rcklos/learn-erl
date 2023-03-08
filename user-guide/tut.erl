@@ -53,3 +53,7 @@ quickSort([]) -> [].
 split_test() ->
     List = [1, a, 3, b, 4],
     split(fun(Elem) -> is_integer(Elem) end, List).
+
+% 主要实现思路
+collection([]) -> [[]];
+collection(L) -> [[H | T] || H <- L, T <- collection(L -- [H])].
