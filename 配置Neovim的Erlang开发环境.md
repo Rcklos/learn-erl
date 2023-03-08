@@ -1,5 +1,7 @@
 ## 写在开头
 
+这个是在wsl上基于Neovim搭建的Erlang开发环境，记录下过程。
+
 ### 先看看版本
 
 wsl及linux子系统发行版本： 
@@ -7,6 +9,8 @@ wsl及linux子系统发行版本：
 ![wsl2](http://cdn.lentme.cn/202303040104951.png)
 
 ### 更新apt源
+
+对于初使用WSL的同学， 
 
 ```bash
 # 遇事不决，先换个apt源并更新下工具
