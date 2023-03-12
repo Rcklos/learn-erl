@@ -23,9 +23,11 @@ search_role_by_id_by_lib(List, Id) ->
     % 实际上lists:search内部是由case..of实现
     lists:search(fun(E) -> E#role.id == Id end, List).
 
+%% ``
 
 % 根据id修改Score
 set_score_by_id(List, Id, Score) -> 
+    lists:keyfind(Arg1, Arg2, Arg3)
     lists:foldr(fun(E, Acc) -> 
                     case E#role.id == Id of
                         true -> [E#role{score = Score} | Acc];

@@ -1,0 +1,5 @@
+#!/usr/bin/lua  
+days = {"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"}  
+for i = 0, #days do
+  print(i)
+end
